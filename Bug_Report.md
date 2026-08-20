@@ -29,7 +29,7 @@ When querying `GET /api/products/:id` with a non-existent ID (e.g. `9999`), the 
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR06-001](github_issue_screenshots/BUG-FR06-001-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/6)
 
 ---
 
@@ -63,7 +63,7 @@ The `POST /api/cart` endpoint does not validate the `quantity` parameter. It acc
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR06-002](github_issue_screenshots/BUG-FR06-002-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/4)
 
 ---
 
@@ -98,7 +98,7 @@ The `POST`, `PUT`, and `DELETE` endpoints for `/api/categories` only check for t
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR14-001](github_issue_screenshots/BUG-FR14-001-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/5)
 
 ---
 
@@ -131,7 +131,7 @@ The `GET /api/products/:id` endpoint does not validate or sanitize the `id` path
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR06-003](github_issue_screenshots/BUG-FR06-003-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/7)
 
 ---
 
@@ -164,7 +164,7 @@ The `POST /api/cart` endpoint accepts requests without a `Content-Type: applicat
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR06-004](github_issue_screenshots/BUG-FR06-004-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/8)
 
 ---
 
@@ -197,7 +197,7 @@ The endpoint `GET /api/orders/:id` does not check if the requested order belongs
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR11-001](github_issue_screenshots/BUG-FR11-001-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/9)
 
 ---
 
@@ -230,7 +230,7 @@ The `POST /api/categories` endpoint does not validate the `name` field. It allow
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR14-002](github_issue_screenshots/BUG-FR14-002-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/10)
 
 ---
 
@@ -263,7 +263,7 @@ When a new user successfully registers via `POST /api/register`, the API returns
 
 #### GitHub Issue
 ![GitHub Issue for BUG-AUTH-001](github_issue_screenshots/BUG-AUTH-001-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/11)
 
 ---
 
@@ -296,7 +296,7 @@ When retrieving a product via `GET /api/products/:id`, if the product's `id` is 
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR06-005](github_issue_screenshots/BUG-FR06-005-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/12)
 
 ---
 
@@ -329,7 +329,7 @@ When adding items to the cart, the server only saves the fields sent by the clie
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR06-006](github_issue_screenshots/BUG-FR06-006-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/13)
 
 ---
 
@@ -362,7 +362,7 @@ When attempting to `PUT` or `DELETE` a category using an `id` that does not exis
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR14-003](github_issue_screenshots/BUG-FR14-003-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/14)
 
 ---
 
@@ -395,7 +395,7 @@ When sending unsupported HTTP methods (e.g., `PUT /api/cart` or `PUT /api/catego
 
 #### GitHub Issue
 ![GitHub Issue for BUG-SYS-001](github_issue_screenshots/BUG-SYS-001-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/15)
 
 ---
 
@@ -429,7 +429,7 @@ When calling `GET /api/orders/my-orders`, the API returns orders with missing or
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR11-002](github_issue_screenshots/BUG-FR11-002-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/16)
 
 ---
 
@@ -461,7 +461,7 @@ The token authentication middleware splits the `Authorization` header by a singl
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR11-003](github_issue_screenshots/BUG-FR11-003-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/17)
 
 ---
 
@@ -494,7 +494,7 @@ The `DELETE /api/categories/:id` endpoint does not validate or sanitize the `id`
 
 #### GitHub Issue
 ![GitHub Issue for BUG-FR14-004](github_issue_screenshots/BUG-FR14-004-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/18)
 
 ---
 
@@ -525,11 +525,11 @@ When multiple `POST /api/cart` requests are fired concurrently for the same user
 * **API Response:** The final quantity is often less than 5 (e.g., 1 or 2), indicating lost updates.
 
 #### Evidence
-See K6 HTML Performance Report for detailed concurrency failure metrics.
+![Evidence for BUG-EXT-001](bug_screenshots/BUG-EXT.png)
 
 #### GitHub Issue
 ![GitHub Issue for BUG-EXT-001](github_issue_screenshots/BUG-EXT-001-ISSUE.png)
-[Link to the GitHub Issue]
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/19)
 
 ---
 
@@ -558,8 +558,8 @@ When two requests attempt to create a category with the same name concurrently v
 * **API Response:** Fails the unique constraint check or generates duplicate entries.
 
 #### Evidence
-See K6 HTML Performance Report for detailed concurrency failure metrics.
+![Evidence for BUG-EXT-005](bug_screenshots/BUG-EXT.png)
 
 #### GitHub Issue
-![GitHub Issue for BUG-EXT-002](github_issue_screenshots/BUG-EXT-002-ISSUE.png)
-[Link to the GitHub Issue]
+![GitHub Issue for BUG-EXT-005](github_issue_screenshots/BUG-EXT-002-ISSUE.png)
+[Link to the GitHub Issue](https://github.com/LeNgocBao145/HW06_API_Testing/issues/20)
