@@ -34,7 +34,7 @@ If step 2 (the actual `git commit` shell command) is skipped, the step is **not*
 
 **Ask, don't assume.** If the reference specs are missing, ambiguous, or incomplete at any step — stop and ask the user for clarification before producing output.
 
-**Minimum coverage check.** Before treating an API as complete, verify the combined test case count from Steps 1–4 (plus any Ad-hoc Extend entries) reaches at least **35 test cases**. If short, tell the user which category is under-covered rather than padding with low-value duplicates.
+**Minimum coverage check.** Before treating an API as complete, verify the combined test case count from Steps 1–4 (plus any Ad-hoc Extend entries) reaches at least **35 test cases per API (target ≥ 35 per API)**. If short, tell the user which category is under-covered rather than padding with low-value duplicates.
 
 ---
 
