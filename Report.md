@@ -291,3 +291,12 @@ This section synthesizes the systemic failures, implementation mistakes, and tes
 * **Fabricating Test Results:** The AI initially hallucinated and fabricated the Passed/Failed numbers in the execution summary before actually running Newman or k6.
 * **Test Data Isolation Issues:** Test cases (like FR11-DOM-01 for viewing orders) were authored without setting up proper prerequisites (like mock orders), resulting in false negatives.
 * **Omitted Execution Metrics:** Performance bugs found by K6 (Concurrency Race Conditions) and grouped schema failures in Postman were neglected in the final execution tally, skewing the reported test coverage and system risk.
+
+## 9. Postman Features Utilized
+
+During the API testing process, the following Postman features were extensively exercised to automate and manage the tests:
+* **Workspaces:** Used to organize the API testing project and maintain a dedicated area for the E-commerce API tests.
+* **Collections:** Grouped related API endpoints and test cases (FR-06, FR-11, FR-14) into structured folders for logical organization and batch execution.
+* **Variables:** Utilized Collection and Environment variables to securely store and dynamically reuse data across requests, such as authentication tokens (`{{token}}`), base URLs (`{{baseUrl}}`), and dynamic identifiers.
+* **Environments:** Configured environments to manage different state contexts (e.g., local testing) and decouple hardcoded values from the test scripts.
+* **Data-driven Runs (Collection Runner):** Leveraged the Collection Runner in combination with external JSON/CSV data files to execute multiple test iterations automatically. This was particularly useful for feeding large data sets for Boundary Value Analysis and Equivalence Partitioning into the tests.
