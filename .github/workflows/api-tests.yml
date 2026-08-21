@@ -1,0 +1,149 @@
+name: API Tests CI
+
+on:
+  push:
+    branches: [ "main", "master", "hw06_cicd" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install Newman & HTML Extra Reporter
+      run: npm install --global newman newman-reporter-htmlextra
+
+    - name: Install backend dependencies
+      working-directory: ./backend
+      run: npm ci
+
+    - name: Create Reports Directory
+      run: mkdir -p tests/reports
+
+    - name: Start backend server
+      working-directory: ./backend
+      run: node server.js > ../tests/reports/server.log 2>&1 &
+
+    - name: Wait for server to be ready
+      run: |
+        for attempt in {1..30}; do
+          if curl --fail --silent http://localhost:3000/api/products > /dev/null; then
+            echo "Backend is ready after ${attempt} attempt(s)."
+            exit 0
+          fi
+          sleep 1
+        done
+        echo "Backend did not become ready in 30 seconds."
+        cat tests/reports/server.log
+        exit 1
+
+    - name: Run Auth Setup & Export Environment
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/EShop_Environment.postman_environment.json
+        --folder "Auth Setup"
+        --export-environment tests/updated_env.json
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/auth-setup.html
+
+    - name: Run FR-06 Cart Domain DDT
+      continue-on-error: true
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/updated_env.json
+        --folder "FR-06 Cart Data-Driven Tests (Run with FR06_Cart_DataDriven.json)"
+        -d tests/FR06_Cart_DataDriven.json
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/fr06_cart_datadriven.html
+
+    - name: Run FR-06 Standalone Tests
+      continue-on-error: true
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/updated_env.json
+        --folder "FR-06 Cart Standalone (ST, SEC, SCHEMA)"
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/fr06_cart_standalone.html
+
+    - name: Run FR-11 Order Domain DDT
+      continue-on-error: true
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/updated_env.json
+        --folder "FR-11 Order Data-Driven Tests (Run with FR11_OrderHistory_DataDriven.json)"
+        -d tests/FR11_OrderHistory_DataDriven.json
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/fr11_orderhistory_datadriven.html
+
+    - name: Run FR-11 Standalone Tests
+      continue-on-error: true
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/updated_env.json
+        --folder "FR-11 Order Standalone (ST, SEC, SCHEMA)"
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/fr11_orderhistory_standalone.html
+
+    - name: Run FR-14 Category Domain DDT
+      continue-on-error: true
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/updated_env.json
+        --folder "FR-14 Category Data-Driven Tests (Run with FR14_Category_DataDriven.json)"
+        -d tests/FR14_Category_DataDriven.json
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/fr14_category_datadriven.html
+
+    - name: Run FR-14 Standalone Tests
+      continue-on-error: true
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/updated_env.json
+        --folder "FR-14 Category Standalone (ST, SEC, SCHEMA)"
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/fr14_category_standalone.html
+
+    - name: Run Extension Advanced Test Cases
+      continue-on-error: true
+      run: >-
+        newman run tests/EShop_API_Test_Suite.postman_collection.json
+        -e tests/updated_env.json
+        --folder "Extension: Advanced Test Cases"
+        -r cli,htmlextra
+        --reporter-htmlextra-export tests/reports/extension.html
+
+    - name: Install k6
+      run: |
+        sudo gpg -k
+        sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+        echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+        sudo apt-get update
+        sudo apt-get install k6
+
+    - name: Run k6 Concurrency Tests
+      continue-on-error: true
+      working-directory: ./tests
+      run: k6 run concurrency_k6_test.js
+
+    - name: Upload Test Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: API-Test-Reports
+        path: |
+          tests/reports/*.html
+          tests/k6_concurrency_performance_report.html
+          tests/reports/server.log
+        if-no-files-found: warn
