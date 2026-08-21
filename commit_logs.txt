@@ -1,0 +1,218 @@
+* commit 5d54d9bfb8c120042e1c50e2399738134c91ed05
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Fri Aug 21 08:48:29 2026 +0700
+| 
+|     feat: Integrate into CI/CD. Add your API test cases to a CI/CD pipeline for the SUT (for example, run Newman in GitHub Actions in your repository), and write a short CI/CD report describing the pipeline configuration and the two runs below, with screenshots and links. Provide two sample commits: one whose pipeline run shows all API test cases passing, and another whose pipeline run shows one test case failing.
+| 
+|  .github/skills/bug-channel-submitter/SKILL.md | 149 ++++++++++++++++++++++++
+|  .github/workflows/api-tests.yml               | 149 ++++++++++++++++++++++++
+|  CI_CD_Report.md                               |  72 ++++++++++++
+|  images/ci/fail-run.png                        | Bin 0 -> 88104 bytes
+|  images/ci/pass-run.png                        | Bin 0 -> 92602 bytes
+|  5 files changed, 370 insertions(+)
+| 
+* commit 4c3378f8a7b4a27c66438e2749a33ad3fe7c8699
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 22:18:30 2026 +0700
+| 
+|     docs: List the Postman features you used in my report
+| 
+|  Report.md                                       |   9 +++++++++
+|  github_issue_screenshots/BUG-FR06-005-ISSUE.png | Bin 182763 -> 206832 bytes
+|  2 files changed, 9 insertions(+)
+| 
+* commit 9afd990edadb52c1f6de01bee52c258b49beffe1
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 21:38:07 2026 +0700
+| 
+|     docs(Bug_Report): add github issue screenshots
+| 
+|  Bug_Report.md                                   |  40 +++++++++++-----------
+|  bug_screenshots/BUG-FR06-005.png                | Bin 0 -> 66969 bytes
+|  github_issue_screenshots/BUG-AUTH-001-ISSUE.png | Bin 0 -> 184053 bytes
+|  github_issue_screenshots/BUG-EXT-001-ISSUE.png  | Bin 0 -> 176660 bytes
+|  github_issue_screenshots/BUG-EXT-002-ISSUE.png  | Bin 0 -> 239243 bytes
+|  github_issue_screenshots/BUG-FR06-001-ISSUE.png | Bin 0 -> 212206 bytes
+|  github_issue_screenshots/BUG-FR06-002-ISSUE.png | Bin 0 -> 221130 bytes
+|  github_issue_screenshots/BUG-FR06-003-ISSUE.png | Bin 0 -> 196807 bytes
+|  github_issue_screenshots/BUG-FR06-004-ISSUE.png | Bin 0 -> 174551 bytes
+|  github_issue_screenshots/BUG-FR06-005-ISSUE.png | Bin 0 -> 182763 bytes
+|  github_issue_screenshots/BUG-FR06-006-ISSUE.png | Bin 0 -> 188466 bytes
+|  github_issue_screenshots/BUG-FR11-001-ISSUE.png | Bin 0 -> 181547 bytes
+|  github_issue_screenshots/BUG-FR11-002-ISSUE.png | Bin 0 -> 181218 bytes
+|  github_issue_screenshots/BUG-FR11-003-ISSUE.png | Bin 0 -> 229831 bytes
+|  github_issue_screenshots/BUG-FR14-001-ISSUE.png | Bin 0 -> 190219 bytes
+|  github_issue_screenshots/BUG-FR14-002-ISSUE.png | Bin 0 -> 185983 bytes
+|  github_issue_screenshots/BUG-FR14-003-ISSUE.png | Bin 0 -> 183282 bytes
+|  github_issue_screenshots/BUG-FR14-004-ISSUE.png | Bin 0 -> 175347 bytes
+|  github_issue_screenshots/BUG-SYS-001-ISSUE.png  | Bin 0 -> 187593 bytes
+|  19 files changed, 20 insertions(+), 20 deletions(-)
+| 
+* commit 317b4ee5880e4a82889e0667cbec608d9b39947a
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 20:26:03 2026 +0700
+| 
+|     docs: bug screenshots
+| 
+|  bug_screenshots/BUG-AUTH-001.png   | Bin 0 -> 61232 bytes
+|  bug_screenshots/BUG-EXT.png        | Bin 0 -> 505880 bytes
+|  bug_screenshots/BUG-FR06-001.png   | Bin 0 -> 62737 bytes
+|  bug_screenshots/BUG-FR06-002.png   | Bin 0 -> 77265 bytes
+|  bug_screenshots/BUG-FR06-003.png   | Bin 0 -> 51392 bytes
+|  bug_screenshots/BUG-FR06-004.png   | Bin 0 -> 76701 bytes
+|  bug_screenshots/BUG-FR06-006.png   | Bin 0 -> 98341 bytes
+|  bug_screenshots/BUG-FR11-001.png   | Bin 0 -> 66221 bytes
+|  bug_screenshots/BUG-FR11-002.png   | Bin 0 -> 73642 bytes
+|  bug_screenshots/BUG-FR11-003.png   | Bin 0 -> 80806 bytes
+|  bug_screenshots/BUG-FR14-001.png   | Bin 0 -> 78277 bytes
+|  bug_screenshots/BUG-FR14-002.png   | Bin 0 -> 77292 bytes
+|  bug_screenshots/BUG-FR14-003.png   | Bin 0 -> 80702 bytes
+|  bug_screenshots/BUG-FR14-004.png   | Bin 0 -> 70698 bytes
+|  bug_screenshots/BUG-SYS-001.png    | Bin 0 -> 85396 bytes
+|  bug_screenshots/FR06-SCHEMA-04.png | Bin 0 -> 67932 bytes
+|  16 files changed, 0 insertions(+), 0 deletions(-)
+| 
+* commit 9e8053d64a07fb27393ac464b10711c2a054dd1f
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:56:42 2026 +0700
+| 
+|     docs: self-assessment table and a test summary report: number of APIs; test cases generated, added, executed, passed, and failed; and number of bugs.
+| 
+|  README.md | 20 +++++++++++++++++++-
+|  1 file changed, 19 insertions(+), 1 deletion(-)
+| 
+* commit 1652d13d6348e71110de471f01f52ea0beca2c1c
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:55:57 2026 +0700
+| 
+|     docs: Bug Report
+| 
+|  Bug_Report.md | 565 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 565 insertions(+)
+| 
+* commit 219988965a1c6f2abb2f4caa2a7880b8b32a474d
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:55:10 2026 +0700
+| 
+|     docs: add AI Critique
+| 
+|  AI_Critique.md |  26 ++++++++++++++++++++++++++
+|  signature.png  | Bin 0 -> 1955 bytes
+|  2 files changed, 26 insertions(+)
+| 
+* commit 2fa3a103056498a94d2106d73e3785b9d75a731c
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:54:44 2026 +0700
+| 
+|     docs: add AI Audit Report
+| 
+|  AI_Audit_Report.md         | 1250 ++++++++++++++++++++++++++++++++++++++++++
+|  github_repository_link.txt |    1 +
+|  prompt_logs.md             | 1148 ++++++++++++++++++++++++++++++++++++++
+|  3 files changed, 2399 insertions(+)
+| 
+* commit 7784cefefa6799c37e4c0efe90bf5351cb547edd
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:54:09 2026 +0700
+| 
+|     docs: Main report, including the API-testing report and my AI audit.
+| 
+|  2026.HW06.API Testing_En.md     | 186 ++++++++++++++++++++++++
+|  Report.md                       | 293 ++++++++++++++++++++++++++++++++++++++
+|  agent_skill_video_demo_link.txt |   1 +
+|  3 files changed, 480 insertions(+)
+| 
+* commit 195eda0768170ca02e8271a9b2a6739634b35c9d
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:42:38 2026 +0700
+| 
+|     reports: newman html reports
+| 
+|  reports/extension.html                         | 1789 +++++
+|  reports/fr06_cart_datadriven.html              | 8404 ++++++++++++++++++++++
+|  reports/fr06_cart_standalone.html              | 6344 ++++++++++++++++
+|  reports/fr11_orderhistory_datadriven.html      | 2042 ++++++
+|  reports/fr11_orderhistory_standalone.html      | 7668 ++++++++++++++++++++
+|  reports/fr14_category_datadriven.html          | 3850 ++++++++++
+|  reports/fr14_category_standalone.html          | 7335 +++++++++++++++++++
+|  reports/k6_concurrency_performance_report.html |  876 +++
+|  8 files changed, 38308 insertions(+)
+| 
+* commit fc02bf3aa71de14ae079bfee05faf044d88fdfdd
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:42:06 2026 +0700
+| 
+|     tests: bash script to execute newman for running test suite and generating html reports
+| 
+|  tests/run-tests.sh | 68 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 68 insertions(+)
+| 
+* commit 69284ab80f93af1c5d1787418a1574f9efd9f0ec
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:41:10 2026 +0700
+| 
+|     tests: add test script of k6 for test case EXT1 and EXT5
+| 
+|  tests/concurrency_k6_test.js | 136 +++++++++++++++++++++++++++++++++++++++++
+|  tests/test_profile.js        |   8 +++
+|  2 files changed, 144 insertions(+)
+| 
+* commit a339510415046168c1ceff17ce40cb269d6efa25
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:40:19 2026 +0700
+| 
+|     tests: add postman collection for test suite
+| 
+|  .../EShop_API_Test_Suite.postman_collection.json  | 2362 +++++++++++++++++++
+|  1 file changed, 2362 insertions(+)
+| 
+* commit 0b7802c35aec9c0821c20639a9047e4846f6970a
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:39:22 2026 +0700
+| 
+|     tests: add file data json for data driven
+| 
+|  tests/FR06_Cart_DataDriven.json         | 16 ++++++++++++++++
+|  tests/FR11_OrderHistory_DataDriven.json |  6 ++++++
+|  tests/FR14_Category_DataDriven.json     | 12 ++++++++++++
+|  3 files changed, 34 insertions(+)
+| 
+* commit 0335d17c85322d51674a74b3f797cd016bcecf8b
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:38:32 2026 +0700
+| 
+|     tests: add postman environment variables for collection
+| 
+|  tests/EShop_Environment.postman_environment.json | 31 ++++++++++++++++++++++
+|  1 file changed, 31 insertions(+)
+| 
+* commit f91dcbc8a3e1243421710f376cac879edfaa54a9
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Thu Aug 20 15:37:41 2026 +0700
+| 
+|     update(api-test-generator): update skill to use data driven
+| 
+|  .github/skills/api-test-generator/SKILL.md | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit c173872a9834d5af6790f3267f4725afb31341a8
+| Author: LeNgocBao145 <23127155@student.hcmus.edu.vn>
+| Date:   Tue Aug 18 19:14:52 2026 +0700
+| 
+|     feat: add api test generator agent skill
+| 
+|  .github/skills/ai-audit-report/SKILL.md           |  44 +++
+|  .../ai-audit-report/scripts/generate_report.py    | 191 +++++++++++++
+|  .github/skills/api-test-generator/SKILL.md        | 290 ++++++++++++++++++++
+|  .github/skills/domain-testing/SKILL.md            | 199 ++++++++++++++
+|  .../references/domain-testing-knowledge.md        | 134 +++++++++
+|  5 files changed, 858 insertions(+)
+| 
+* commit 1107fceae4b4066e7145e884fd7e88d8f8881068
+  Author: LE DUC NGOC BAO <147987387+LeNgocBao145@users.noreply.github.com>
+  Date:   Tue Aug 11 20:46:24 2026 +0700
+  
+      Initial commit
+  
+   README.md | 1 +
+   1 file changed, 1 insertion(+)

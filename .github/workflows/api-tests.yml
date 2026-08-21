@@ -2,7 +2,7 @@ name: API Tests CI
 
 on:
   push:
-    branches: [ "main", "master", "hw06_cicd" ]
+    branches: [ "main", "master" ]
   pull_request:
     branches: [ "main", "master" ]
   workflow_dispatch:
